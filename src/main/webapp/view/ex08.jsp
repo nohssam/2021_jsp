@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <h2> 결과 보기 </h2>
+  <h2>ex08.jsp 결과 보기 </h2>
   <h2>
   	 <li>이름 : <%=name %> </li>
   	 <li>나이 : <%=age %> </li>
