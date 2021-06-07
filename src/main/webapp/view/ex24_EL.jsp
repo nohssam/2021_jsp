@@ -51,6 +51,26 @@
   
   <%-- pageContext, request, session, application 속성의 이름이 같은 경우 
       우선 순위는 pageContext > request > session > application  --%>
+      <% pageContext.setAttribute("pc", "i3"); %>
+      <% request.setAttribute("pc", "i5"); %>
+      <% session.setAttribute("pc", "i7"); %>
+      <% application.setAttribute("pc", "i9"); %>
+      
+    <h2> EL 변수 사용 예제2 </h2>  
+    <h3> pc : ${pc} </h3>  
+    <h3> pc : ${pageScope.pc} </h3>  
+    <h3> pc : ${requestScope.pc} </h3>  
+    <h3> pc : ${sessionScope.pc} </h3>  
+    <h3> pc : ${applicationScope.pc} </h3>  
+    
+    <%-- 이때 페이지 이동 하자  --%>
+    <%-- response.sendRedirect 로 페이지 이동을 하면 pageContext와 requet는 정보가 사라진다. --%>
+    <%--  <% response.sendRedirect("ex25_result.jsp"); %> --%>
+    
+    
+    <%-- forward로 페이지 이동을 하면 pagContext 정보만 사라진다.  --%>
+    <%--  <% request.getRequestDispatcher("ex25_result.jsp").forward(request, response); %>  --%>
+     <jsp:forward page="ex25_result.jsp" />
   <hr>
 </body>
 </html>
